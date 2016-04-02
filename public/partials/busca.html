@@ -1,0 +1,25 @@
+ <div class="row">
+			  	 <div class="col-md-6">
+					<input type="text" class="form-control" id="nomeSerie" placeholder="Série ..." ng-model='serie'>	  
+				</div>
+				<div class="col-md-6">
+					<button type="button" class="btn btn-primary" ng-click='busca()'>Buscar</button>
+				</div>
+				
+		  </div>
+		  <br/>
+		  
+		  <div class="row">
+			  <div class="col-md-6" ng-repeat="serie in series">
+				<div class="thumbnail">
+				  <img src="{{serie.show.image.medium}}" alt="capa">
+				  <div class="caption">
+					<h3>{{serie.show.name}}</h3>	
+					<div ng-bind-html="serie.show.summary | html"></div>
+
+										
+					<p><a href="/resultado" class="btn btn-primary" role="button">Mais Informações</a></p>
+				  </div>
+				</div>
+			  </div>
+			</div>
