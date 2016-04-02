@@ -9,7 +9,7 @@ angular.module('wseries').controller('BuscaController', function ($scope, $http)
 				// busca as séries pelo nome
 				 $http.get('http://api.tvmaze.com/search/shows?q='+$scope.serie)
 				.success(function (cont) {
-					console.log(cont)
+					
 					$scope.series=cont;
 					
 				})
@@ -19,13 +19,14 @@ angular.module('wseries').controller('BuscaController', function ($scope, $http)
 			
 			}
 	
-	};
-	
-	
-			
-			
-			
-     
-			
+	};		
 
+})
+
+//filtro que formata o html
+.filter('html', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
 });
+
